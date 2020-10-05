@@ -23,6 +23,17 @@ module.exports = {
       test: /\.jsx?$/,
       use: ['babel-loader'],
       include: path.join(__dirname, 'src')
-    }]
+    },
+    {
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      use: [
+        {
+          loader: 'file-loader?name=assets/fonts/webfonts/[name].[ext]'
+        },
+        {
+          loader: 'file-loader?name=assets/fonts/Roboto/[name].[ext]'
+        }
+      ]
+    }],
   }
 };
